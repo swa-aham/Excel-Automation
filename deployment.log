@@ -1,0 +1,1244 @@
+Building wheel for pandas (pyproject.toml): still running...
+
+  Building wheel for pandas (pyproject.toml): finished with status 'done'
+
+  Created wheel for pandas: filename=pandas-1.5.3-cp312-cp312-linux_x86_64.whl size=45558069 sha256=d8dc6e6c3e5c044aa4f985bc61fda84cc8ffd5898ed5f41e73955dc9b9733af0
+
+  Stored in directory: /tmp/pip-ephem-wheel-cache-qqt0c_r8/wheels/fb/83/18/8e7307aa1185c5498c5490e4d9c8a1732d9f1056e86c3491c6
+
+  Building wheel for pillow (pyproject.toml): started
+
+  Building wheel for pillow (pyproject.toml): finished with status 'error'
+
+  error: subprocess-exited-with-error
+
+  
+
+  × Building wheel for pillow (pyproject.toml) did not run successfully.
+
+  │ exit code: 1
+
+  ╰─> [217 lines of output]
+
+      /tmp/pip-build-env-rbylvdl3/overlay/lib/python3.12/site-packages/setuptools/dist.py:759: SetuptoolsDeprecationWarning: License classifiers are deprecated.
+
+      !!
+
+      
+
+              ********************************************************************************
+
+              Please consider removing the following classifiers in favor of a SPDX license expression:
+
+      
+
+              License :: OSI Approved :: Historical Permission Notice and Disclaimer (HPND)
+
+      
+
+              See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license for details.
+
+              ********************************************************************************
+
+      
+
+      !!
+
+        self._finalize_license_expression()
+
+      running bdist_wheel
+
+      running build
+
+      running build_py
+
+      creating build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/IptcImagePlugin.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/MicImagePlugin.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ImageCms.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/BufrStubImagePlugin.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/_util.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/McIdasImagePlugin.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/PixarImagePlugin.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/PdfParser.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/_binary.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ImageDraw2.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/IcoImagePlugin.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/FontFile.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ImtImagePlugin.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/XpmImagePlugin.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ImageTransform.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ImageFilter.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ImageMode.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ImImagePlugin.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ImageMath.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/DdsImagePlugin.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/__main__.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/PdfImagePlugin.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/_deprecate.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/SpiderImagePlugin.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ImageQt.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ImageEnhance.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/IcnsImagePlugin.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ImageFont.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/FliImagePlugin.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/EpsImagePlugin.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/FtexImagePlugin.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/Jpeg2KImagePlugin.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/XVThumbImagePlugin.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/XbmImagePlugin.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ImageFile.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/features.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ImagePath.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/SgiImagePlugin.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/DcxImagePlugin.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/WmfImagePlugin.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/_tkinter_finder.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/Hdf5StubImagePlugin.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/BdfFontFile.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ImagePalette.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/PpmImagePlugin.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ImageStat.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/PSDraw.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/PngImagePlugin.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/JpegImagePlugin.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/QoiImagePlugin.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ImageColor.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/BmpImagePlugin.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/PsdImagePlugin.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/PcdImagePlugin.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/MpegImagePlugin.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/PalmImagePlugin.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/FitsStubImagePlugin.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/GifImagePlugin.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/PcxImagePlugin.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/WebPImagePlugin.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/FitsImagePlugin.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ImageDraw.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/TiffImagePlugin.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/SunImagePlugin.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/MpoImagePlugin.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/GdImageFile.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ImageOps.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ImageTk.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/MspImagePlugin.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/BlpImagePlugin.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/PyAccess.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ImageSequence.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/PaletteFile.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ImageGrab.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/GimpGradientFile.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ImageShow.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/FpxImagePlugin.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ImageMorph.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/TgaImagePlugin.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ImageWin.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/GbrImagePlugin.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/_version.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/GribStubImagePlugin.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/GimpPaletteFile.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/PcfFontFile.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ImageChops.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/TarIO.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/__init__.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/Image.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/CurImagePlugin.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/TiffTags.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ContainerIO.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/JpegPresets.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/WalImageFile.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ExifTags.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      running egg_info
+
+      writing src/Pillow.egg-info/PKG-INFO
+
+      writing dependency_links to src/Pillow.egg-info/dependency_links.txt
+
+      writing requirements to src/Pillow.egg-info/requires.txt
+
+      writing top-level names to src/Pillow.egg-info/top_level.txt
+
+      reading manifest file 'src/Pillow.egg-info/SOURCES.txt'
+
+      reading manifest template 'MANIFEST.in'
+
+      warning: no files found matching '*.c'
+
+      warning: no files found matching '*.h'
+
+      warning: no files found matching '*.sh'
+
+      warning: no files found matching '*.txt'
+
+      warning: no previously-included files found matching '.appveyor.yml'
+
+      warning: no previously-included files found matching '.clang-format'
+
+      warning: no previously-included files found matching '.coveragerc'
+
+      warning: no previously-included files found matching '.editorconfig'
+
+      warning: no previously-included files found matching '.readthedocs.yml'
+
+      warning: no previously-included files found matching 'codecov.yml'
+
+      warning: no previously-included files found matching 'renovate.json'
+
+      warning: no previously-included files matching '.git*' found anywhere in distribution
+
+      warning: no previously-included files matching '*.pyc' found anywhere in distribution
+
+      warning: no previously-included files matching '*.so' found anywhere in distribution
+
+      no previously-included directories found matching '.ci'
+
+      adding license file 'LICENSE'
+
+      writing manifest file 'src/Pillow.egg-info/SOURCES.txt'
+
+      running build_ext
+
+      
+
+      
+
+      The headers or library files could not be found for zlib,
+
+      a required dependency when compiling Pillow from source.
+
+      
+
+      Please see the install instructions at:
+
+         https://pillow.readthedocs.io/en/latest/installation.html
+
+      
+
+      Traceback (most recent call last):
+
+        File "<string>", line 993, in <module>
+
+        File "/tmp/pip-build-env-rbylvdl3/overlay/lib/python3.12/site-packages/setuptools/__init__.py", line 117, in setup
+
+          return distutils.core.setup(**attrs)
+
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+        File "/tmp/pip-build-env-rbylvdl3/overlay/lib/python3.12/site-packages/setuptools/_distutils/core.py", line 186, in setup
+
+          return run_commands(dist)
+
+                 ^^^^^^^^^^^^^^^^^^
+
+        File "/tmp/pip-build-env-rbylvdl3/overlay/lib/python3.12/site-packages/setuptools/_distutils/core.py", line 202, in run_commands
+
+          dist.run_commands()
+
+        File "/tmp/pip-build-env-rbylvdl3/overlay/lib/python3.12/site-packages/setuptools/_distutils/dist.py", line 1002, in run_commands
+
+          self.run_command(cmd)
+
+        File "/tmp/pip-build-env-rbylvdl3/overlay/lib/python3.12/site-packages/setuptools/dist.py", line 1104, in run_command
+
+          super().run_command(command)
+
+        File "/tmp/pip-build-env-rbylvdl3/overlay/lib/python3.12/site-packages/setuptools/_distutils/dist.py", line 1021, in run_command
+
+          cmd_obj.run()
+
+        File "/tmp/pip-build-env-rbylvdl3/overlay/lib/python3.12/site-packages/setuptools/command/bdist_wheel.py", line 370, in run
+
+          self.run_command("build")
+
+        File "/tmp/pip-build-env-rbylvdl3/overlay/lib/python3.12/site-packages/setuptools/_distutils/cmd.py", line 357, in run_command
+
+          self.distribution.run_command(command)
+
+        File "/tmp/pip-build-env-rbylvdl3/overlay/lib/python3.12/site-packages/setuptools/dist.py", line 1104, in run_command
+
+          super().run_command(command)
+
+        File "/tmp/pip-build-env-rbylvdl3/overlay/lib/python3.12/site-packages/setuptools/_distutils/dist.py", line 1021, in run_command
+
+          cmd_obj.run()
+
+        File "/tmp/pip-build-env-rbylvdl3/overlay/lib/python3.12/site-packages/setuptools/_distutils/command/build.py", line 135, in run
+
+          self.run_command(cmd_name)
+
+        File "/tmp/pip-build-env-rbylvdl3/overlay/lib/python3.12/site-packages/setuptools/_distutils/cmd.py", line 357, in run_command
+
+          self.distribution.run_command(command)
+
+        File "/tmp/pip-build-env-rbylvdl3/overlay/lib/python3.12/site-packages/setuptools/dist.py", line 1104, in run_command
+
+          super().run_command(command)
+
+        File "/tmp/pip-build-env-rbylvdl3/overlay/lib/python3.12/site-packages/setuptools/_distutils/dist.py", line 1021, in run_command
+
+          cmd_obj.run()
+
+        File "/tmp/pip-build-env-rbylvdl3/overlay/lib/python3.12/site-packages/setuptools/command/build_ext.py", line 99, in run
+
+          _build_ext.run(self)
+
+        File "/tmp/pip-build-env-rbylvdl3/overlay/lib/python3.12/site-packages/setuptools/_distutils/command/build_ext.py", line 368, in run
+
+          self.build_extensions()
+
+        File "<string>", line 809, in build_extensions
+
+      RequiredDependencyException: zlib
+
+      
+
+      During handling of the above exception, another exception occurred:
+
+      
+
+      Traceback (most recent call last):
+
+        File "/home/adminuser/venv/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 353, in <module>
+
+          main()
+
+        File "/home/adminuser/venv/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 335, in main
+
+          json_out['return_val'] = hook(**hook_input['kwargs'])
+
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+        File "/home/adminuser/venv/lib/python3.12/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 251, in build_wheel
+
+          return _build_backend().build_wheel(wheel_directory, config_settings,
+
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+        File "/tmp/pip-build-env-rbylvdl3/overlay/lib/python3.12/site-packages/setuptools/build_meta.py", line 435, in build_wheel
+
+          return _build(['bdist_wheel', '--dist-info-dir', str(metadata_directory)])
+
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+        File "/tmp/pip-build-env-rbylvdl3/overlay/lib/python3.12/site-packages/setuptools/build_meta.py", line 423, in _build
+
+          return self._build_with_temp_dir(
+
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+        File "/tmp/pip-build-env-rbylvdl3/overlay/lib/python3.12/site-packages/setuptools/build_meta.py", line 404, in _build_with_temp_dir
+
+          self.run_setup()
+
+        File "/tmp/pip-build-env-rbylvdl3/overlay/lib/python3.12/site-packages/setuptools/build_meta.py", line 512, in run_setup
+
+          super().run_setup(setup_script=setup_script)
+
+        File "/tmp/pip-build-env-rbylvdl3/overlay/lib/python3.12/site-packages/setuptools/build_meta.py", line 317, in run_setup
+
+          exec(code, locals())
+
+        File "<string>", line 1010, in <module>
+
+      RequiredDependencyException:
+
+      
+
+      The headers or library files could not be found for zlib,
+
+      a required dependency when compiling Pillow from source.
+
+      
+
+      Please see the install instructions at:
+
+         https://pillow.readthedocs.io/en/latest/installation.html
+
+      
+
+      
+
+      [end of output]
+
+  
+
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+
+  ERROR: Failed building wheel for pillow
+
+Successfully built pandas
+
+Failed to build pillow
+
+ERROR: Could not build wheels for pillow, which is required to install pyproject.toml-based projects
+
+
+[notice] A new release of pip is available: 24.0 -> 25.0.1
+
+[notice] To update, run: pip install --upgrade pip
+
+Checking if Streamlit is installed
+
+Installing rich for an improved exception logging
+
+Using standard pip install.
+
+Collecting rich>=10.14.0
+
+  Downloading rich-14.0.0-py3-none-any.whl.metadata (18 kB)
+
+Collecting markdown-it-py>=2.2.0 (from rich>=10.14.0)
+
+  Downloading markdown_it_py-3.0.0-py3-none-any.whl.metadata (6.9 kB)
+
+Collecting pygments<3.0.0,>=2.13.0 (from rich>=10.14.0)
+
+  Downloading pygments-2.19.1-py3-none-any.whl.metadata (2.5 kB)
+
+Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich>=10.14.0)
+
+  Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+
+Downloading rich-14.0.0-py3-none-any.whl (243 kB)
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 243.2/243.2 kB 13.3 MB/s eta 0:00:00[2025-04-22 06:58:47.816715] 
+
+Downloading markdown_it_py-3.0.0-py3-none-any.whl (87 kB)
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 87.5/87.5 kB 139.8 MB/s eta 0:00:00[2025-04-22 06:58:47.830553] 
+
+Downloading pygments-2.19.1-py3-none-any.whl (1.2 MB)
+
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.2/1.2 MB 51.2 MB/s eta 0:00:00[2025-04-22 06:58:47.869480] 
+
+Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+
+Installing collected packages: pygments, mdurl, markdown-it-py, rich
+
+  Attempting uninstall: pygments
+
+    Found existing installation: Pygments 2.19.1
+
+    Uninstalling Pygments-2.19.1:
+
+      Successfully uninstalled Pygments-2.19.1
+
+  Attempting uninstall: mdurl
+
+    Found existing installation: mdurl 0.1.2
+
+    Uninstalling mdurl-0.1.2:
+
+      Successfully uninstalled mdurl-0.1.2
+
+  Attempting uninstall: markdown-it-py
+
+    Found existing installation: markdown-it-py 3.0.0
+
+    Uninstalling markdown-it-py-3.0.0:
+
+      Successfully uninstalled markdown-it-py-3.0.0
+
+  Attempting uninstall: rich
+
+    Found existing installation: rich 14.0.0
+
+    Uninstalling rich-14.0.0:
+
+      Successfully uninstalled rich-14.0.0
+
+Successfully installed markdown-it-py-3.0.0 mdurl-0.1.2 pygments-2.19.1 rich-14.0.0
+
+
+[notice] A new release of pip is available: 24.0 -> 25.0.1
+
+[notice] To update, run: pip install --upgrade pip
+
+
+────────────────────────────────────────────────────────────────────────────────────────
+
+
+[06:58:51] ❗️ installer returned a non-zero exit code
+
+[06:58:51] ❗️ Error during processing dependencies! Please fix the error and push an update, or try restarting the app.
+
+[06:58:51] 🐙 Pulling code changes from Github...
+
+[06:58:52] 📦 Processing dependencies...
+
+
+──────────────────────────────────────── uv ───────────────────────────────────────────
+
+
+Using uv pip install.
+
+Using Python 3.12.10 environment at /home/adminuser/venv
+
+Resolved 47 packages in 122ms
+
+  × Failed to download and build `pillow==9.5.0`
+
+  ╰─▶ Build backend failed to build wheel through `build_wheel` (exit status:
+
+      1)
+
+
+      [stdout][2025-04-22 06:58:54.316010] 
+
+      running bdist_wheel
+
+      running build
+
+      running build_py
+
+      copying src/PIL/IptcImagePlugin.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/MicImagePlugin.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ImageCms.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/BufrStubImagePlugin.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/_util.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/McIdasImagePlugin.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/PixarImagePlugin.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/PdfParser.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/_binary.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ImageDraw2.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/IcoImagePlugin.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/FontFile.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ImtImagePlugin.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/XpmImagePlugin.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ImageTransform.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ImageFilter.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ImageMode.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ImImagePlugin.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ImageMath.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/DdsImagePlugin.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/__main__.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/PdfImagePlugin.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/_deprecate.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/SpiderImagePlugin.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ImageQt.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ImageEnhance.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/IcnsImagePlugin.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ImageFont.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/FliImagePlugin.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/EpsImagePlugin.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/FtexImagePlugin.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/Jpeg2KImagePlugin.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/XVThumbImagePlugin.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/XbmImagePlugin.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ImageFile.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/features.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ImagePath.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/SgiImagePlugin.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/DcxImagePlugin.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/WmfImagePlugin.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/_tkinter_finder.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/Hdf5StubImagePlugin.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/BdfFontFile.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ImagePalette.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/PpmImagePlugin.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ImageStat.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/PSDraw.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/PngImagePlugin.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/JpegImagePlugin.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/QoiImagePlugin.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ImageColor.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/BmpImagePlugin.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/PsdImagePlugin.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/PcdImagePlugin.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/MpegImagePlugin.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/PalmImagePlugin.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/FitsStubImagePlugin.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/GifImagePlugin.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/PcxImagePlugin.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/WebPImagePlugin.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/FitsImagePlugin.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ImageDraw.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/TiffImagePlugin.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/SunImagePlugin.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/MpoImagePlugin.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/GdImageFile.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ImageOps.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ImageTk.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/MspImagePlugin.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/BlpImagePlugin.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/PyAccess.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ImageSequence.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/PaletteFile.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ImageGrab.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/GimpGradientFile.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ImageShow.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/FpxImagePlugin.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ImageMorph.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/TgaImagePlugin.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ImageWin.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/GbrImagePlugin.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/_version.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/GribStubImagePlugin.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/GimpPaletteFile.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/PcfFontFile.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ImageChops.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/TarIO.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/__init__.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/Image.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/CurImagePlugin.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/TiffTags.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ContainerIO.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/JpegPresets.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/WalImageFile.py ->
+
+      build/lib.linux-x86_64-cpython-312/PIL
+
+      copying src/PIL/ExifTags.py -> build/lib.linux-x86_64-cpython-312/PIL
+
+      running egg_info
+
+      writing src/Pillow.egg-info/PKG-INFO
+
+      writing dependency_links to src/Pillow.egg-info/dependency_links.txt
+
+      writing requirements to src/Pillow.egg-info/requires.txt
+
+      writing top-level names to src/Pillow.egg-info/top_level.txt
+
+      reading manifest file 'src/Pillow.egg-info/SOURCES.txt'
+
+      reading manifest template 'MANIFEST.in'
+
+      adding license file 'LICENSE'
+
+      writing manifest file 'src/Pillow.egg-info/SOURCES.txt'
+
+      running build_ext
+
+
+      [stderr]
+
+      /home/adminuser/.cache/uv/builds-v0/.tmpdZlghn/lib/python3.12/site-packages/setuptools/dist.py:759:
+
+      SetuptoolsDeprecationWarning: License classifiers are deprecated.
+
+      !!
+
+
+      
+
+      ********************************************************************************
+
+              Please consider removing the following classifiers in favor of a
+
+      SPDX license expression:
+
+
+              License :: OSI Approved :: Historical Permission Notice and
+
+      Disclaimer (HPND)
+
+
+              See
+
+      https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license
+
+      for details.
+
+      
+
+      ********************************************************************************
+
+
+      !!
+
+        self._finalize_license_expression()
+
+      warning: no files found matching '*.c'
+
+      warning: no files found matching '*.h'
+
+      warning: no files found matching '*.sh'
+
+      warning: no files found matching '*.txt'
+
+      warning: no previously-included files found matching '.appveyor.yml'
+
+      warning: no previously-included files found matching '.clang-format'
+
+      warning: no previously-included files found matching '.coveragerc'
+
+      warning: no previously-included files found matching '.editorconfig'
+
+      warning: no previously-included files found matching '.readthedocs.yml'
+
+      warning: no previously-included files found matching 'codecov.yml'
+
+      warning: no previously-included files found matching 'renovate.json'
+
+      warning: no previously-included files matching '.git*' found anywhere
+
+      in distribution
+
+      warning: no previously-included files matching '*.pyc' found anywhere
+
+      in distribution
+
+      warning: no previously-included files matching '*.so' found anywhere
+
+      in distribution
+
+      no previously-included directories found matching '.ci'
+
+
+
+      The headers or library files could not be found for zlib,
+
+      a required dependency when compiling Pillow from source.
+
+
+      Please see the install instructions at:
+
+         https://pillow.readthedocs.io/en/latest/installation.html
+
+
+      Traceback (most recent call last):
+
+        File "<string>", line 993, in <module>
+
+        File
+
+      "/home/adminuser/.cache/uv/builds-v0/.tmpdZlghn/lib/python3.12/site-packages/setuptools/__init__.py",
+
+      line 117, in setup
+
+          return distutils.core.setup(**attrs)
+
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+        File
+
+      "/home/adminuser/.cache/uv/builds-v0/.tmpdZlghn/lib/python3.12/site-packages/setuptools/_distutils/core.py",
+
+      line 186, in setup
+
+          return run_commands(dist)
+
+                 ^^^^^^^^^^^^^^^^^^
+
+        File
+
+      "/home/adminuser/.cache/uv/builds-v0/.tmpdZlghn/lib/python3.12/site-packages/setuptools/_distutils/core.py",
+
+      line 202, in run_commands
+
+          dist.run_commands()
+
+        File
+
+      "/home/adminuser/.cache/uv/builds-v0/.tmpdZlghn/lib/python3.12/site-packages/setuptools/_distutils/dist.py",
+
+      line 1002, in run_commands
+
+          self.run_command(cmd)
+
+        File
+
+      "/home/adminuser/.cache/uv/builds-v0/.tmpdZlghn/lib/python3.12/site-packages/setuptools/dist.py",
+
+      line 1104, in run_command
+
+          super().run_command(command)
+
+        File
+
+      "/home/adminuser/.cache/uv/builds-v0/.tmpdZlghn/lib/python3.12/site-packages/setuptools/_distutils/dist.py",
+
+      line 1021, in run_command
+
+          cmd_obj.run()
+
+        File
+
+      "/home/adminuser/.cache/uv/builds-v0/.tmpdZlghn/lib/python3.12/site-packages/setuptools/command/bdist_wheel.py",
+
+      line 370, in run
+
+          self.run_command("build")
+
+        File
+
+      "/home/adminuser/.cache/uv/builds-v0/.tmpdZlghn/lib/python3.12/site-packages/setuptools/_distutils/cmd.py",
+
+      line 357, in run_command
+
+          self.distribution.run_command(command)
+
+        File
+
+      "/home/adminuser/.cache/uv/builds-v0/.tmpdZlghn/lib/python3.12/site-packages/setuptools/dist.py",
+
+      line 1104, in run_command
+
+          super().run_command(command)
+
+        File
+
+      "/home/adminuser/.cache/uv/builds-v0/.tmpdZlghn/lib/python3.12/site-packages/setuptools/_distutils/dist.py",
+
+      line 1021, in run_command
+
+          cmd_obj.run()
+
+        File
+
+      "/home/adminuser/.cache/uv/builds-v0/.tmpdZlghn/lib/python3.12/site-packages/setuptools/_distutils/command/build.py",
+
+      line 135, in run
+
+          self.run_command(cmd_name)
+
+        File
+
+      "/home/adminuser/.cache/uv/builds-v0/.tmpdZlghn/lib/python3.12/site-packages/setuptools/_distutils/cmd.py",
+
+      line 357, in run_command
+
+          self.distribution.run_command(command)
+
+        File
+
+      "/home/adminuser/.cache/uv/builds-v0/.tmpdZlghn/lib/python3.12/site-packages/setuptools/dist.py",
+
+      line 1104, in run_command
+
+          super().run_command(command)
+
+        File
+
+      "/home/adminuser/.cache/uv/builds-v0/.tmpdZlghn/lib/python3.12/site-packages/setuptools/_distutils/dist.py",
+
+      line 1021, in run_command
+
+          cmd_obj.run()
+
+        File
+
+      "/home/adminuser/.cache/uv/builds-v0/.tmpdZlghn/lib/python3.12/site-packages/setuptools/command/build_ext.py",
+
+      line 99, in run
+
+          _build_ext.run(self)
+
+        File
+
+      "/home/adminuser/.cache/uv/builds-v0/.tmpdZlghn/lib/python3.12/site-packages/setuptools/_distutils/command/build_ext.py",
+
+      line 368, in run
+
+          self.build_extensions()
+
+        File "<string>", line 809, in build_extensions
+
+      RequiredDependencyException: zlib
+
+
+      During handling of the above exception, another exception occurred:
+
+
+      Traceback (most recent call last):
+
+        File "<string>", line 11, in <module>
+
+        File
+
+      "/home/adminuser/.cache/uv/builds-v0/.tmpdZlghn/lib/python3.12/site-packages/setuptools/build_meta.py",
+
+      line 432, in build_wheel
+
+          return _build(['bdist_wheel'])
+
+                 ^^^^^^^^^^^^^^^^^^^^^^^
+
+        File
+
+      "/home/adminuser/.cache/uv/builds-v0/.tmpdZlghn/lib/python3.12/site-packages/setuptools/build_meta.py",
+
+      line 423, in _build
+
+          return self._build_with_temp_dir(
+
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+        File
+
+      "/home/adminuser/.cache/uv/builds-v0/.tmpdZlghn/lib/python3.12/site-packages/setuptools/build_meta.py",
+
+      line 404, in _build_with_temp_dir
+
+          self.run_setup()
+
+        File
+
+      "/home/adminuser/.cache/uv/builds-v0/.tmpdZlghn/lib/python3.12/site-packages/setuptools/build_meta.py",
+
+      line 512, in run_setup
+
+          super().run_setup(setup_script=setup_script)
+
+        File
+
+      "/home/adminuser/.cache/uv/builds-v0/.tmpdZlghn/lib/python3.12/site-packages/setuptools/build_meta.py",
+
+      line 317, in run_setup
+
+          exec(code, locals())
+
+        File "<string>", line 1010, in <module>
+
+      RequiredDependencyException:
+
+
+      The headers or library files could not be found for zlib,
+
+      a required dependency when compiling Pillow from source.
+
+
+      Please see the install instructions at:
+
+         https://pillow.readthedocs.io/en/latest/installation.html
+
+
+
+
+  help: `pillow` was included because `streamlit==1.27.0` depends on
+
+        `pillow`
+
+Checking if Streamlit is installed
+
+Installing rich for an improved exception logging
+
+Using uv pip install.
+
+Using Python 3.12.10 environment at /home/adminuser/venv
+
+Audited 1 package in 1ms
+
+
+────────────────────────────────────────────────────────────────────────────────────────
+
+
+
+──────────────────────────────────────── pip ───────────────────────────────────────────
+
+
+Using standard pip install.
+
+Collecting streamlit==1.27.0 (from -r /mount/src/excel-automation/requirements.txt (line 1))
+
+  Downloading streamlit-1.27.0-py2.py3-none-any.whl.metadata (8.0 kB)
+
+Collecting pandas==1.5.3 (from -r /mount/src/excel-automation/requirements.txt (line 2))
+
+  Downloading pandas-1.5.3.tar.gz (5.2 MB)
+
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.2/5.2 MB 77.8 MB/s eta 0:00:00[2025-04-22 06:58:56.786162] 
+
+  Installing build dependencies: started
+
+  Installing build dependencies: finished with status 'done'
+
+  Getting requirements to build wheel: started

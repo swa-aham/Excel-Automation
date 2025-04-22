@@ -11,7 +11,6 @@ st.set_page_config(
 )
 
 # Import visualization libraries only when needed
-# This helps avoid dependency issues during deployment
 try:
     import plotly.express as px
     import plotly.graph_objects as go
@@ -19,13 +18,30 @@ except ImportError:
     st.warning("Plotly not found. Installing...")
     # Auto-install if missing
     import subprocess
-    subprocess.check_call(["pip", "install", "plotly==5.14.1"])
+    import sys
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "plotly==5.14.1"])
     import plotly.express as px
     import plotly.graph_objects as go
 
 # Title and introduction
 st.title("LNC Implementation Dashboard")
 st.markdown("### Analysis and Visualization of LNC Implementation Data")
+
+# Function to safely convert columns to appropriate types
+def safe_convert_types(df):
+    try:
+        for col in df.columns:
+            # Try to convert numeric columns
+            try:
+                if df[col].dtype == 'object':
+                    # Try to convert to numeric, but keep as string if it fails
+                    df[col] = pd.to_numeric(df[col], errors='ignore')
+            except:
+                pass
+        return df
+    except Exception as e:
+        st.error(f"Error converting data types: {e}")
+        return df
 
 # Define default files (for local development)
 DEFAULT_CYCLE1_FILE = "Cycle 1 LNC Implementation  Analysis January 25.xlsx"
@@ -38,23 +54,28 @@ st.sidebar.markdown("Upload your Excel files or use the default files if availab
 uploaded_cycle1 = st.sidebar.file_uploader("Upload Cycle 1 Analysis File", type=["xlsx"])
 uploaded_comparison = st.sidebar.file_uploader("Upload Comparison Graph File", type=["xlsx"])
 
-# Function to load data
+# Function to load data with enhanced error handling
 @st.cache_data
 def load_data(cycle1_file, comparison_file):
     try:
         # Load Cycle 1 data
         if isinstance(cycle1_file, io.BytesIO):  # Uploaded file
-            cycle1_df = pd.read_excel(cycle1_file, sheet_name="Cycle 1")
-            cycle1_state_df = pd.read_excel(cycle1_file, sheet_name="Cycle 1 State DPM wise status")
+            cycle1_df = pd.read_excel(cycle1_file, sheet_name="Cycle 1", dtype=str)
+            cycle1_state_df = pd.read_excel(cycle1_file, sheet_name="Cycle 1 State DPM wise status", dtype=str)
         else:  # Local file path
-            cycle1_df = pd.read_excel(cycle1_file, sheet_name="Cycle 1")
-            cycle1_state_df = pd.read_excel(cycle1_file, sheet_name="Cycle 1 State DPM wise status")
+            cycle1_df = pd.read_excel(cycle1_file, sheet_name="Cycle 1", dtype=str)
+            cycle1_state_df = pd.read_excel(cycle1_file, sheet_name="Cycle 1 State DPM wise status", dtype=str)
         
         # Load comparison data
         if isinstance(comparison_file, io.BytesIO):  # Uploaded file
-            comparison_df = pd.read_excel(comparison_file, sheet_name="Comparison Graph")
+            comparison_df = pd.read_excel(comparison_file, sheet_name="Comparison Graph", dtype=str)
         else:  # Local file path
-            comparison_df = pd.read_excel(comparison_file, sheet_name="Comparison Graph")
+            comparison_df = pd.read_excel(comparison_file, sheet_name="Comparison Graph", dtype=str)
+        
+        # Convert types safely
+        cycle1_df = safe_convert_types(cycle1_df)
+        cycle1_state_df = safe_convert_types(cycle1_state_df)
+        comparison_df = safe_convert_types(comparison_df)
         
         return cycle1_df, cycle1_state_df, comparison_df
     except Exception as e:
@@ -90,8 +111,15 @@ if cycle1_file is not None and comparison_file is not None:
     if cycle1_df is not None and cycle1_state_df is not None and comparison_df is not None:
         # Clean comparison data
         comparison_cleaned = comparison_df.copy()
-        comparison_cleaned = comparison_cleaned.iloc[1:].reset_index(drop=True)  # Remove first row (dates)
+        # First row might contain dates - identify and skip
+        if pd.to_datetime(comparison_cleaned.iloc[0, 1:], errors='coerce').notna().any():
+            comparison_cleaned = comparison_cleaned.iloc[1:].reset_index(drop=True)
         comparison_cleaned.fillna(0, inplace=True)  # Replace NaN with 0
+        
+        # Convert percentage columns to numeric
+        for col in comparison_cleaned.columns:
+            if col != 'Questions':
+                comparison_cleaned[col] = pd.to_numeric(comparison_cleaned[col], errors='coerce')
 
         # Create tabs for different views
         tab1, tab2, tab3 = st.tabs(["Implementation Overview", "District Performance", "Comparison Across Cycles"])
@@ -105,7 +133,7 @@ if cycle1_file is not None and comparison_file is not None:
             
             # Filter out rows with sensible data (remove headers)
             state_data = cycle1_state_df[cycle1_state_df['CG State wide Implementation table'].notna() & 
-                                         cycle1_state_df['CG State wide Implementation table'] != 'NaN']
+                                         (cycle1_state_df['CG State wide Implementation table'] != 'NaN')]
             
             # Calculate overall metrics
             if not state_data.empty:
@@ -152,9 +180,9 @@ if cycle1_file is not None and comparison_file is not None:
                 with metrics_col3:
                     try:
                         # Find LS attendance in comparison data
-                        ls_row = comparison_cleaned[comparison_cleaned['Questions'].str.contains('LS', na=False)]
-                        if not ls_row.empty:
-                            ls_value = ls_row.iloc[0]['Cycle 1']
+                        ls_rows = comparison_cleaned[comparison_cleaned['Questions'].str.contains('LS', na=False, case=False)]
+                        if not ls_rows.empty:
+                            ls_value = ls_rows.iloc[0]['Cycle 1']
                             st.metric("LS Training Attendance", f"{ls_value}%")
                         else:
                             st.metric("LS Training Attendance", "N/A")
@@ -164,9 +192,9 @@ if cycle1_file is not None and comparison_file is not None:
                 with metrics_col4:
                     try:
                         # Find AWW attendance in comparison data
-                        aww_row = comparison_cleaned[comparison_cleaned['Questions'].str.contains('AWW', na=False)]
-                        if not aww_row.empty:
-                            aww_value = aww_row.iloc[0]['Cycle 1']
+                        aww_rows = comparison_cleaned[comparison_cleaned['Questions'].str.contains('AWW', na=False, case=False)]
+                        if not aww_rows.empty:
+                            aww_value = aww_rows.iloc[0]['Cycle 1']
                             st.metric("AWW Training Attendance", f"{aww_value}%")
                         else:
                             st.metric("AWW Training Attendance", "N/A")
@@ -177,21 +205,27 @@ if cycle1_file is not None and comparison_file is not None:
             st.subheader("Implementation Metrics - Cycle 1")
             
             # Clean questions for better display
+            comparison_cleaned['Questions'] = comparison_cleaned['Questions'].astype(str)
             comparison_cleaned['Questions'] = comparison_cleaned['Questions'].str.replace('%', '')
             comparison_cleaned['Questions'] = comparison_cleaned['Questions'].str.replace('/', '-')
             
             # Create bar chart
-            fig = px.bar(
-                comparison_cleaned, 
-                x='Questions', 
-                y='Cycle 1',
-                labels={'Questions': 'Metric', 'Cycle 1': 'Percentage (%)'},
-                title='Cycle 1 Implementation Metrics',
-                color='Cycle 1',
-                color_continuous_scale=px.colors.sequential.Blues
-            )
-            fig.update_layout(xaxis_tickangle=-45)
-            st.plotly_chart(fig, use_container_width=True)
+            try:
+                fig = px.bar(
+                    comparison_cleaned, 
+                    x='Questions', 
+                    y='Cycle 1',
+                    labels={'Questions': 'Metric', 'Cycle 1': 'Percentage (%)'},
+                    title='Cycle 1 Implementation Metrics',
+                    color='Cycle 1',
+                    color_continuous_scale=px.colors.sequential.Blues
+                )
+                fig.update_layout(xaxis_tickangle=-45)
+                st.plotly_chart(fig, use_container_width=True)
+            except Exception as e:
+                st.error(f"Error creating bar chart: {e}")
+                st.write("Raw data:")
+                st.dataframe(comparison_cleaned)
 
         # Tab 2: District Performance
         with tab2:
@@ -202,12 +236,26 @@ if cycle1_file is not None and comparison_file is not None:
             
             try:
                 # Find district column and filter out headers
-                district_data = cycle1_state_df[cycle1_state_df['Unnamed: 3'].notna() & 
-                                              (cycle1_state_df['Unnamed: 3'] != 'District')]
-                district_data = district_data[['Unnamed: 3', 'Unnamed: 10', 'Unnamed: 15', 'Unnamed: 22', 'Unnamed: 27']]
-                district_data.columns = ['District', 'CDPO Training', 'CDPO Lab Practice', 'LS AWW Workshop', 'AWW Training']
-            except:
-                st.error("Could not extract district data from the Excel file. The format may be different than expected.")
+                district_col = "Unnamed: 3"  # This is the column name from the original analysis
+                if district_col in cycle1_state_df.columns:
+                    district_data = cycle1_state_df[cycle1_state_df[district_col].notna() & 
+                                                  (cycle1_state_df[district_col] != 'District')]
+                    target_cols = [district_col, 'Unnamed: 10', 'Unnamed: 15', 'Unnamed: 22', 'Unnamed: 27']
+                    available_cols = [col for col in target_cols if col in cycle1_state_df.columns]
+                    
+                    if len(available_cols) > 1:  # At least district column + one metric
+                        district_data = district_data[available_cols]
+                        district_data.columns = ['District'] + [f'Metric {i}' for i in range(len(available_cols)-1)]
+                    else:
+                        st.error("Could not find enough metric columns in the data")
+                        district_data = None
+                else:
+                    st.error(f"District column '{district_col}' not found")
+                    # Show available columns
+                    st.write("Available columns:")
+                    st.write(cycle1_state_df.columns.tolist())
+            except Exception as e:
+                st.error(f"Could not extract district data from the Excel file: {e}")
             
             if district_data is not None and not district_data.empty:
                 # Display district data table
@@ -218,52 +266,43 @@ if cycle1_file is not None and comparison_file is not None:
                 st.subheader("District Performance Comparison")
                 
                 # Allow user to select metrics to compare
-                selected_metrics = st.multiselect(
-                    "Select metrics to compare across districts",
-                    options=district_data.columns[1:].tolist(),
-                    default=district_data.columns[1:3].tolist()
-                )
-                
-                if selected_metrics:
-                    # Prepare data for visualization
-                    plot_data = district_data.melt(
-                        id_vars=['District'],
-                        value_vars=selected_metrics,
-                        var_name='Metric',
-                        value_name='Percentage'
+                metric_cols = district_data.columns[1:].tolist()
+                if metric_cols:
+                    selected_metrics = st.multiselect(
+                        "Select metrics to compare across districts",
+                        options=metric_cols,
+                        default=metric_cols[:min(2, len(metric_cols))]
                     )
                     
-                    # Create grouped bar chart
-                    fig = px.bar(
-                        plot_data,
-                        x='District',
-                        y='Percentage',
-                        color='Metric',
-                        barmode='group',
-                        title='District Performance by Key Metrics',
-                        labels={'Percentage': 'Percentage (%)', 'District': 'District Name'}
-                    )
-                    fig.update_layout(xaxis_tickangle=-45)
-                    st.plotly_chart(fig, use_container_width=True)
-                    
-                    # Create heatmap for comprehensive view
-                    st.subheader("District Performance Heatmap")
-                    
-                    # Prepare data for heatmap
-                    heatmap_data = district_data.set_index('District')
-                    heatmap_data = heatmap_data[selected_metrics]
-                    
-                    # Create heatmap
-                    fig = px.imshow(
-                        heatmap_data.values,
-                        x=heatmap_data.columns,
-                        y=heatmap_data.index,
-                        color_continuous_scale=px.colors.sequential.Blues,
-                        labels=dict(x="Metric", y="District", color="Percentage"),
-                        title="Performance Heatmap by District"
-                    )
-                    fig.update_layout(xaxis_tickangle=-45)
-                    st.plotly_chart(fig, use_container_width=True)
+                    if selected_metrics:
+                        try:
+                            # Prepare data for visualization
+                            plot_data = district_data.melt(
+                                id_vars=['District'],
+                                value_vars=selected_metrics,
+                                var_name='Metric',
+                                value_name='Percentage'
+                            )
+                            
+                            # Convert percentage to numeric
+                            plot_data['Percentage'] = pd.to_numeric(plot_data['Percentage'], errors='coerce')
+                            
+                            # Create grouped bar chart
+                            fig = px.bar(
+                                plot_data,
+                                x='District',
+                                y='Percentage',
+                                color='Metric',
+                                barmode='group',
+                                title='District Performance by Key Metrics',
+                                labels={'Percentage': 'Percentage (%)', 'District': 'District Name'}
+                            )
+                            fig.update_layout(xaxis_tickangle=-45)
+                            st.plotly_chart(fig, use_container_width=True)
+                        except Exception as e:
+                            st.error(f"Error creating district comparison chart: {e}")
+                            st.write("Raw data:")
+                            st.dataframe(plot_data)
 
         # Tab 3: Comparison Across Cycles
         with tab3:
@@ -277,64 +316,59 @@ if cycle1_file is not None and comparison_file is not None:
             st.subheader("Trends Across Implementation Cycles")
             
             # Allow user to select metrics to compare
-            selected_questions = st.multiselect(
-                "Select metrics to compare across cycles",
-                options=comparison_cleaned['Questions'].tolist(),
-                default=comparison_cleaned['Questions'].tolist()[:3]
-            )
-            
-            if selected_questions:
-                # Filter data based on selection
-                filtered_data = comparison_cleaned[comparison_cleaned['Questions'].isin(selected_questions)]
+            if 'Questions' in comparison_cleaned.columns:
+                question_options = comparison_cleaned['Questions'].dropna().astype(str).tolist()
                 
-                # Prepare data for line chart
-                plot_data = filtered_data.melt(
-                    id_vars=['Questions'],
-                    value_vars=['Cycle 1', 'Cycle 2', 'Cycle 2.1', 'Cycle 3'],
-                    var_name='Cycle',
-                    value_name='Percentage'
-                )
-                
-                # Create line chart
-                fig = px.line(
-                    plot_data,
-                    x='Cycle',
-                    y='Percentage',
-                    color='Questions',
-                    markers=True,
-                    labels={'Percentage': 'Percentage (%)', 'Cycle': 'Implementation Cycle'},
-                    title='Implementation Metrics Across Cycles'
-                )
-                st.plotly_chart(fig, use_container_width=True)
-                
-                # Create radar chart for comprehensive comparison
-                st.subheader("Radar Chart: Metrics Across Cycles")
-                
-                # Create radar chart
-                fig = go.Figure()
-                
-                # Add traces for each cycle
-                for cycle in ['Cycle 1', 'Cycle 2', 'Cycle 2.1', 'Cycle 3']:
-                    cycle_data = filtered_data.copy()
-                    fig.add_trace(go.Scatterpolar(
-                        r=cycle_data[cycle].values,
-                        theta=cycle_data['Questions'].values,
-                        fill='toself',
-                        name=cycle
-                    ))
-                
-                # Update layout
-                fig.update_layout(
-                    polar=dict(
-                        radialaxis=dict(
-                            visible=True,
-                            range=[0, 100]
-                        )
-                    ),
-                    showlegend=True
-                )
-                
-                st.plotly_chart(fig, use_container_width=True)
+                if question_options:
+                    selected_questions = st.multiselect(
+                        "Select metrics to compare across cycles",
+                        options=question_options,
+                        default=question_options[:min(3, len(question_options))]
+                    )
+                    
+                    if selected_questions:
+                        try:
+                            # Filter data based on selection
+                            filtered_data = comparison_cleaned[comparison_cleaned['Questions'].isin(selected_questions)]
+                            
+                            # Identify cycle columns
+                            cycle_cols = [col for col in comparison_cleaned.columns 
+                                          if col.startswith('Cycle') and col != 'Questions']
+                            
+                            if cycle_cols:
+                                # Prepare data for line chart
+                                plot_data = filtered_data.melt(
+                                    id_vars=['Questions'],
+                                    value_vars=cycle_cols,
+                                    var_name='Cycle',
+                                    value_name='Percentage'
+                                )
+                                
+                                # Create line chart
+                                fig = px.line(
+                                    plot_data,
+                                    x='Cycle',
+                                    y='Percentage',
+                                    color='Questions',
+                                    markers=True,
+                                    labels={'Percentage': 'Percentage (%)', 'Cycle': 'Implementation Cycle'},
+                                    title='Implementation Metrics Across Cycles'
+                                )
+                                st.plotly_chart(fig, use_container_width=True)
+                            else:
+                                st.error("No cycle columns found in the data")
+                        except Exception as e:
+                            st.error(f"Error creating cycle comparison chart: {e}")
+                            st.write("Raw data for debugging:")
+                            st.dataframe(filtered_data)
+                else:
+                    st.error("No question options found in the data")
+            else:
+                st.error("'Questions' column not found in comparison data")
+    else:
+        st.error("Error loading the data files. Please check the format and try again.")
+else:
+    st.info("Please upload both files to view the dashboard.")
 
 # Footer
 st.markdown("---")
