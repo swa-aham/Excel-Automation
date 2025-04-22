@@ -1,7 +1,5 @@
 import streamlit as st
 import pandas as pd
-import plotly.express as px
-import plotly.graph_objects as go
 import os
 import io
 
@@ -11,6 +9,19 @@ st.set_page_config(
     page_icon="📊",
     layout="wide"
 )
+
+# Import visualization libraries only when needed
+# This helps avoid dependency issues during deployment
+try:
+    import plotly.express as px
+    import plotly.graph_objects as go
+except ImportError:
+    st.warning("Plotly not found. Installing...")
+    # Auto-install if missing
+    import subprocess
+    subprocess.check_call(["pip", "install", "plotly==5.14.1"])
+    import plotly.express as px
+    import plotly.graph_objects as go
 
 # Title and introduction
 st.title("LNC Implementation Dashboard")
